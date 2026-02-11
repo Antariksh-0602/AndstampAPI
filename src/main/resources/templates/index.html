@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stamp Collection</title>
+</head>
+<body>
+
+<h2>My Stamp Collection</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Stamp Name</th>
+        <th>Country</th>
+        <th>Year</th>
+    </tr>
+
+    <!-- Loop through stamps -->
+    <tr th:each="stamp : ${stamps}">
+        <td th:text="${stamp.id}"></td>
+        <td th:text="${stamp.stampname}"></td>
+        <td th:text="${stamp.countryname}"></td>
+        <td th:text="${stamp.year}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
