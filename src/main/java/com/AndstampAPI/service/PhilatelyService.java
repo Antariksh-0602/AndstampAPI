@@ -44,4 +44,8 @@ public class PhilatelyService {
     public void deleteStamp(Long id) {
         repository.deleteById(id);
     }
+    public List<Philately> searchByStampName(String keyword) {
+        return repository.findByStampnameContainingIgnoreCase(keyword);
+    }
+
 }

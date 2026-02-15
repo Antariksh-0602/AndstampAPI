@@ -1,9 +1,10 @@
 package com.AndstampAPI.controller;
 
-import com.AndstampAPI.Philately;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.AndstampAPI.service.PhilatelyService;
 
 @SuppressWarnings("unused")
@@ -19,6 +20,11 @@ public class WebController {
 	    public String viewHomePage(Model model) {
 	        model.addAttribute("stamps", service.getAllStamps());
 	        return "index"; // loads templates/index.html
+	    }
+	    @GetMapping("/search")
+	    public String searchStamps(@RequestParam String keyword, Model model) {
+	        model.addAttribute("stamps", service.searchByStampName(keyword));
+	        return "index";
 	    }
 
 }

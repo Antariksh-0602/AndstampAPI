@@ -5,7 +5,20 @@
 </head>
 <body>
 
-<h2>My Stamp Collection</h2>
+<h2>Stamp Collection</h2>
+
+<!-- 🔎 SEARCH PANEL -->
+<form th:action="@{/search}" method="get" style="margin-bottom:20px;">
+    <input type="text"
+           name="keyword"
+           placeholder="Search by stamp name..."
+           style="padding:6px; width:250px;">
+
+    <button type="submit" style="padding:6px 12px;">
+        Search
+    </button>
+
+</form>
 
 <table border="1">
     <tr>

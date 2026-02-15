@@ -2,6 +2,8 @@ package com.AndstampAPI.controller;
 
 import com.AndstampAPI.Philately;
 import com.AndstampAPI.service.PhilatelyService;
+
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,6 +35,12 @@ public class PhilatelyController {
     public Philately getStamp(@PathVariable Long id) {
         return service.getStampById(id);
     }
+    @GetMapping("/delete/{id}")
+    public String deleteStamp1(@PathVariable Long id) {
+        service.deleteStamp(id);
+        return "redirect:/";
+    }
+
 
     // UPDATE
     @PutMapping("/{id}")
